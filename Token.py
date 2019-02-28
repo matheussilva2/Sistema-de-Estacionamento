@@ -7,18 +7,14 @@ class Token:
 		self.__válido = False
 		self.validarToken()
 
-	#### Métodos Especiais ####
 	def getNumero(self):
 		return self.__numero
-	def __setNumero(self, value):
-		self.__numero = value
+
 	def getTime(self):
 		return self.__time
-	def __setTime(self, value):
-		self.__time = value
+		
 	def isValid(self):
 		return self.__válido
-	######### Métodos ##########
 
 	def usarToken(self):
 		self.__válido = False
