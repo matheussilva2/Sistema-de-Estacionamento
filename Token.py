@@ -11,3 +11,5 @@ class Token:
 
 	def getTime(self):
 		return self.__time
+	def getPlaca(self):
+		return self.__placa
