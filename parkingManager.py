@@ -2,6 +2,7 @@ from random import randint
 import datetime
 from Token import Token
 from os import system
+from codigoqr import *
 
 tarifa = 0.50
 tempoDeCobranca = 3 #em segundos
@@ -17,6 +18,7 @@ def criarToken(placa):
 		numero = randint(1111,9999)
 		tempo = datetime.datetime.now()
 		adicionarToken(Token(numero, tempo, placa))
+		gerarCodigo(numero)
 		return numero
 	else:
 		return False
@@ -32,7 +34,6 @@ def adicionarToken(token):
 
 def apagarToken(numero):
 	tokens.pop(getTokenIndex(numero))
-
 
 def calcularValor(numero):
 	tempoEstacionado = datetime.datetime.now() - tokens[getTokenIndex(numero)].getTime() #em segundos
